@@ -2,12 +2,12 @@ import cv2
 import numpy as np
 
 def process_video(input_video_path, output_video_path, output_text_file):
-    # Define the color ranges for the balls
+    # Define the color ranges for the balls with refined ranges to exclude background
     color_ranges = {
-        'red': ([0, 50, 50], [10, 255, 255]),
+        'red': ([0, 120, 70], [10, 255, 255]),
         'yellow': ([20, 100, 100], [30, 255, 255]),
         'white': ([0, 0, 200], [180, 30, 255]),
-        'green': ([35, 50, 50], [140, 255, 255])  # Combined green and blue range
+        'green': ([35, 50, 50], [85, 255, 255])  # More precise green range
     }
     
     # Initialize video capture and get video properties
